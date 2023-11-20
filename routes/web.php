@@ -36,3 +36,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/landing', function () {
+    return view('pages.landing');
+})->name('landing');
