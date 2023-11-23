@@ -1,8 +1,7 @@
 import ApplicationLogo from '@/Components/ApplicationLogo';
 import { Link, Head } from '@inertiajs/react';
 
-export default function Navbar({ auth}) {
-    
+const Navbar = ({ user }) => {
     return (
         <>
             <Head title="Welcome" />
@@ -15,14 +14,14 @@ export default function Navbar({ auth}) {
                 <div className="form-control mx-auto">
                     <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
                 </div>
-                {/* <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                         <img alt="Tailwind CSS Navbar component" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        {auth.user ? <>
+                        {user ? <>
                                         <li>
                                             <Link href={route('dashboard')} as="button" className="justify-between">
                                                 Dashboard
@@ -32,14 +31,15 @@ export default function Navbar({ auth}) {
                                         <li><Link>Settings</Link></li>
                                         <li><Link href={route('logout')} method="post" as="button">Logout</Link></li>
                                     </> : <>
-                                            
                                         <li><Link href={route('login')} as="button">Login</Link></li>
                                         <li><Link href={route('register')} as="button">Register</Link></li>
                                     </>
                         }
                     </ul>
-                </div> */}
+                </div>
             </div>
         </>
     );
 }
+
+export default Navbar

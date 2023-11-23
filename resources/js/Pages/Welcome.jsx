@@ -1,16 +1,12 @@
-import { useState } from 'react';
 import Navbar from '@/Components/Navbar';
-import { Link, Head } from '@inertiajs/react';
-import ApplicationLogo from '@/Components/ApplicationLogo';
+import { Head } from '@inertiajs/react';
+import React from 'react';
 
-
-export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-    
+export default function Welcome(props) {
     return (
         <>
             <Head title="Welcome" />
-            <Navbar/>
+            <Navbar user={props.auth.user} />
         </>
     );
 }
