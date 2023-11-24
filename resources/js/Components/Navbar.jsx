@@ -10,13 +10,18 @@ const Navbar = ({ user }) => {
 
                     <div className="">
                         <Link href="/">
-                            <ApplicationLogo className="" />
+                            <ApplicationLogo/>
                         </Link>
                     </div>
 
-                    <div className="form-control w-[640px]">
-                        <input type="text" placeholder="Cari Buku" className=" rounded-full bg-[#F6F4EB] border-[#749BC2] placeholder-[#749BC2] text-[#274f69] focus:border-none md:w-auto" />
-                    </div>
+                    <form>   
+                        <div class="relative form-control w-[640px]">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <img src="img/landing/search.png" alt="SVG Image" id="your-svg-image" className=" opacity-60 w-4 h-4 text-gray-500 dark:text-gray-400" />
+                            </div>
+                            <input type="search" id="default-search" class="ps-10 rounded-full bg-[#F6F4EB] border-[#749BC2] placeholder-[#749BC2] text-[#274f69] focus:border-none md:w-auto" placeholder="Cari Buku" required></input>
+                        </div>
+                    </form>
 
                     <div className="dropdown dropdown-end ml-[130px]">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
